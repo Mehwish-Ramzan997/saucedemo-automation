@@ -1,0 +1,19 @@
+{
+  "name": "saucedemo-automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test --project=chromium"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@playwright/test": "^1.57.0",
+    "allure-playwright": "^3.4.2",
+    "dotenv": "^17.2.3",
+    "playwright": "^1.57.0",
+    "playwright-core": "^1.57.0"
+  }
+}
