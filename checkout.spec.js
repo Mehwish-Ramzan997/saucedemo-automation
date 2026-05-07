@@ -25,32 +25,32 @@ test.describe('Checkout Tests', () => {
 
   test.describe('Step 1 - Customer Info', () => {
 
-    test('TC_CHK_001 - Lands on checkout step one page', async ({ page }) => {
+    test('TC_CHK_1 - Lands on checkout step one page', async ({ page }) => {
       await expect(page).toHaveURL(/checkout-step-one/);
     });
 
-    test('TC_CHK_002 - Empty first name shows error', async () => {
+    test('TC_CHK_2 - Empty first name shows error', async () => {
       const d = CHECKOUT_INFO.invalid.noFirstName;
       await checkoutPage.fillInfo(d.firstName, d.lastName, d.postalCode);
       const error = await checkoutPage.getErrorMessage();
       expect(error).toContain(MESSAGES.checkoutFirstName);
     });
 
-    test('TC_CHK_003 - Empty last name shows error', async () => {
+    test('TC_CHK_3 - Empty last name shows error', async () => {
       const d = CHECKOUT_INFO.invalid.noLastName;
       await checkoutPage.fillInfo(d.firstName, d.lastName, d.postalCode);
       const error = await checkoutPage.getErrorMessage();
       expect(error).toContain(MESSAGES.checkoutLastName);
     });
 
-    test('TC_CHK_004 - Empty postal code shows error', async () => {
+    test('TC_CHK_4 - Empty postal code shows error', async () => {
       const d = CHECKOUT_INFO.invalid.noZip;
       await checkoutPage.fillInfo(d.firstName, d.lastName, d.postalCode);
       const error = await checkoutPage.getErrorMessage();
       expect(error).toContain(MESSAGES.checkoutPostalCode);
     });
 
-    test('TC_CHK_005 - Valid info proceeds to step 2', async ({ page }) => {
+    test('TC_CHK_5 - Valid info proceeds to step 2', async ({ page }) => {
       const d = CHECKOUT_INFO.valid;
       await checkoutPage.fillInfo(d.firstName, d.lastName, d.postalCode);
       await expect(page).toHaveURL(/checkout-step-two/);
@@ -65,16 +65,16 @@ test.describe('Checkout Tests', () => {
       await checkoutPage.fillInfo(d.firstName, d.lastName, d.postalCode);
     });
 
-    test('TC_CHK_006 - Overview shows ordered item', async ({ page }) => {
+    test('TC_CHK_6 - Overview shows ordered item', async ({ page }) => {
       const itemName = await page.locator('.inventory_item_name').textContent();
       expect(itemName).toContain(PRODUCTS.backpack);
     });
 
-    test('TC_CHK_007 - Total price is displayed', async ({ page }) => {
+    test('TC_CHK_7 - Total price is displayed', async ({ page }) => {
       await expect(page.locator('.summary_total_label')).toBeVisible();
     });
 
-    test('TC_CHK_008 - Total equals subtotal plus tax', async ({ page }) => {
+    test('TC_CHK_8 - Total equals subtotal plus tax', async ({ page }) => {
       const subtotalText = await page.locator('.summary_subtotal_label').textContent();
       const taxText = await page.locator('.summary_tax_label').textContent();
       const totalText = await page.locator('.summary_total_label').textContent();
@@ -88,14 +88,14 @@ test.describe('Checkout Tests', () => {
 
   test.describe('Step 3 - Order Complete', () => {
 
-    test('TC_CHK_009 - Complete order shows success message', async () => {
+    test('TC_CHK_9 - Complete order shows success message', async () => {
       const d = CHECKOUT_INFO.valid;
       await checkoutPage.fillInfo(d.firstName, d.lastName, d.postalCode);
       await checkoutPage.completeOrder();
       expect(await checkoutPage.isOrderSuccessful()).toBeTruthy();
     });
 
-    test('TC_CHK_010 - Success page shows Thank You', async () => {
+    test('TC_CHK_10 - Success page shows Thank You', async () => {
       const d = CHECKOUT_INFO.valid;
       await checkoutPage.fillInfo(d.firstName, d.lastName, d.postalCode);
       await checkoutPage.completeOrder();
@@ -103,7 +103,7 @@ test.describe('Checkout Tests', () => {
       expect(msg).toContain(MESSAGES.orderSuccess);
     });
 
-    test('TC_CHK_011 - Back Home button goes to products', async ({ page }) => {
+    test('TC_CHK_11 - Back Home button goes to products', async ({ page }) => {
       const d = CHECKOUT_INFO.valid;
       await checkoutPage.fillInfo(d.firstName, d.lastName, d.postalCode);
       await checkoutPage.completeOrder();
@@ -111,7 +111,7 @@ test.describe('Checkout Tests', () => {
       await expect(page).toHaveURL(/inventory/);
     });
 
-    test('TC_CHK_012 - Cart is empty after order', async ({ page }) => {
+    test('TC_CHK_12 - Cart is empty after order', async ({ page }) => {
       const d = CHECKOUT_INFO.valid;
       await checkoutPage.fillInfo(d.firstName, d.lastName, d.postalCode);
       await checkoutPage.completeOrder();
