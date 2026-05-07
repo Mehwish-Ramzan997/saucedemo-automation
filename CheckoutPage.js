@@ -1,4 +1,4 @@
-// pages/CheckoutPage.js
+
 class CheckoutPage {
   constructor(page) {
     this.page = page;
