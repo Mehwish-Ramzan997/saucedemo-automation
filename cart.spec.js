@@ -5,7 +5,7 @@ const { ProductsPage } = require('../pages/ProductsPage');
 const { CartPage } = require('../pages/CartPage');
 const { USERS, PRODUCTS } = require('../utils/testData');
 
-test.describe('🛒 Cart Tests', () => {
+test.describe('Cart Tests', () => {
 
   let loginPage;
   let productsPage;
