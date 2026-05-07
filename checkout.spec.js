@@ -6,7 +6,7 @@ const { CartPage } = require('../pages/CartPage');
 const { CheckoutPage } = require('../pages/CheckoutPage');
 const { USERS, PRODUCTS, CHECKOUT_INFO, MESSAGES } = require('../utils/testData');
 
-test.describe('💳 Checkout Tests', () => {
+test.describe('Checkout Tests', () => {
 
   let loginPage, productsPage, cartPage, checkoutPage;
 
@@ -23,7 +23,7 @@ test.describe('💳 Checkout Tests', () => {
     await cartPage.proceedToCheckout();
   });
 
-  test.describe('📝 Step 1 - Customer Info', () => {
+  test.describe('Step 1 - Customer Info', () => {
 
     test('TC_CHK_001 - Lands on checkout step one page', async ({ page }) => {
       await expect(page).toHaveURL(/checkout-step-one/);
@@ -58,7 +58,7 @@ test.describe('💳 Checkout Tests', () => {
 
   });
 
-  test.describe('📋 Step 2 - Order Overview', () => {
+  test.describe('Step 2 - Order Overview', () => {
 
     test.beforeEach(async () => {
       const d = CHECKOUT_INFO.valid;
@@ -86,7 +86,7 @@ test.describe('💳 Checkout Tests', () => {
 
   });
 
-  test.describe('✅ Step 3 - Order Complete', () => {
+  test.describe('Step 3 - Order Complete', () => {
 
     test('TC_CHK_009 - Complete order shows success message', async () => {
       const d = CHECKOUT_INFO.valid;
