@@ -1,4 +1,4 @@
-// pages/ProductsPage.js
+
 class ProductsPage {
   constructor(page) {
     this.page = page;
