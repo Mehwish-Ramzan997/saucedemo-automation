@@ -20,20 +20,20 @@ test.describe('Cart Tests', () => {
     await expect(page).toHaveURL(/inventory/);
   });
 
-  test('TC_CART_001 - Cart is empty on fresh login', async () => {
+  test('TC_CART_1 - Cart is empty on fresh login', async () => {
     await productsPage.goToCart();
     const count = await cartPage.getCartItemCount();
     expect(count).toBe(0);
   });
 
-  test('TC_CART_002 - Added product appears in cart', async () => {
+  test('TC_CART_2 - Added product appears in cart', async () => {
     await productsPage.addProductToCart(PRODUCTS.backpack);
     await productsPage.goToCart();
     const names = await cartPage.getCartItemNames();
     expect(names).toContain(PRODUCTS.backpack);
   });
 
-  test('TC_CART_003 - Multiple products appear in cart', async () => {
+  test('TC_CART_3 - Multiple products appear in cart', async () => {
     await productsPage.addProductToCart(PRODUCTS.backpack);
     await productsPage.addProductToCart(PRODUCTS.bikeLight);
     await productsPage.goToCart();
@@ -41,7 +41,7 @@ test.describe('Cart Tests', () => {
     expect(count).toBe(2);
   });
 
-  test('TC_CART_004 - Remove item from cart works', async () => {
+  test('TC_CART_4 - Remove item from cart works', async () => {
     await productsPage.addProductToCart(PRODUCTS.backpack);
     await productsPage.goToCart();
     await cartPage.removeItem(PRODUCTS.backpack);
@@ -49,7 +49,7 @@ test.describe('Cart Tests', () => {
     expect(count).toBe(0);
   });
 
-  test('TC_CART_005 - Cart badge disappears after removing all items', async () => {
+  test('TC_CART_5 - Cart badge disappears after removing all items', async () => {
     await productsPage.addProductToCart(PRODUCTS.backpack);
     await productsPage.goToCart();
     await cartPage.removeItem(PRODUCTS.backpack);
@@ -57,7 +57,7 @@ test.describe('Cart Tests', () => {
     expect(badgeVisible).toBeFalsy();
   });
 
-  test('TC_CART_006 - Remove one item keeps others', async () => {
+  test('TC_CART_6 - Remove one item keeps others', async () => {
     await productsPage.addProductToCart(PRODUCTS.backpack);
     await productsPage.addProductToCart(PRODUCTS.bikeLight);
     await productsPage.goToCart();
@@ -67,13 +67,13 @@ test.describe('Cart Tests', () => {
     expect(names).toContain(PRODUCTS.bikeLight);
   });
 
-  test('TC_CART_007 - Continue Shopping goes back to products', async ({ page }) => {
+  test('TC_CART_7 - Continue Shopping goes back to products', async ({ page }) => {
     await productsPage.goToCart();
     await cartPage.continueShopping();
     await expect(page).toHaveURL(/inventory/);
   });
 
-  test('TC_CART_008 - Checkout button navigates to checkout', async ({ page }) => {
+  test('TC_CART_8 - Checkout button navigates to checkout', async ({ page }) => {
     await productsPage.addProductToCart(PRODUCTS.backpack);
     await productsPage.goToCart();
     await cartPage.proceedToCheckout();
