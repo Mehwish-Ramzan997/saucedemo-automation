@@ -14,22 +14,22 @@ test.describe(' Login Tests', () => {
 
   test.describe(' Positive Tests', () => {
 
-    test('TC_LOGIN_001 - Standard user login successfully', async ({ page }) => {
+    test('TC_LOGIN_1 - Standard user login successfully', async ({ page }) => {
       await loginPage.login(USERS.standard.username, USERS.standard.password);
       await expect(page).toHaveURL(/inventory/);
       await expect(page.locator('.title')).toHaveText('Products');
     });
 
-    test('TC_LOGIN_002 - Page title is correct', async ({ page }) => {
+    test('TC_LOGIN_2 - Page title is correct', async ({ page }) => {
       await expect(page).toHaveTitle(/Swag Labs/);
     });
 
-    test('TC_LOGIN_003 - Login button is visible and enabled', async () => {
+    test('TC_LOGIN_3 - Login button is visible and enabled', async () => {
       await expect(loginPage.loginButton).toBeVisible();
       await expect(loginPage.loginButton).toBeEnabled();
     });
 
-    test('TC_LOGIN_004 - Performance glitch user can login', async ({ page }) => {
+    test('TC_LOGIN_4 - Performance glitch user can login', async ({ page }) => {
       await loginPage.login(USERS.performance.username, USERS.performance.password);
       await expect(page).toHaveURL(/inventory/, { timeout: 15000 });
     });
@@ -38,35 +38,35 @@ test.describe(' Login Tests', () => {
 
   test.describe(' Negative Tests', () => {
 
-    test('TC_LOGIN_005 - Locked out user sees error', async () => {
+    test('TC_LOGIN_5 - Locked out user sees error', async () => {
       await loginPage.login(USERS.locked.username, USERS.locked.password);
       const error = await loginPage.getErrorMessage();
       expect(error).toContain(MESSAGES.lockedUserError);
     });
 
-    test('TC_LOGIN_006 - Wrong password shows error', async () => {
+    test('TC_LOGIN_6 - Wrong password shows error', async () => {
       await loginPage.login(USERS.standard.username, 'wrongpassword');
       expect(await loginPage.isErrorVisible()).toBeTruthy();
     });
 
-    test('TC_LOGIN_007 - Empty username shows error', async () => {
+    test('TC_LOGIN_7 - Empty username shows error', async () => {
       await loginPage.login('', USERS.standard.password);
       const error = await loginPage.getErrorMessage();
       expect(error).toContain(MESSAGES.emptyUsernameError);
     });
 
-    test('TC_LOGIN_008 - Empty password shows error', async () => {
+    test('TC_LOGIN_8 - Empty password shows error', async () => {
       await loginPage.login(USERS.standard.username, '');
       const error = await loginPage.getErrorMessage();
       expect(error).toContain(MESSAGES.emptyPasswordError);
     });
 
-    test('TC_LOGIN_009 - Both fields empty shows error', async () => {
+    test('TC_LOGIN_9 - Both fields empty shows error', async () => {
       await loginPage.login('', '');
       expect(await loginPage.isErrorVisible()).toBeTruthy();
     });
 
-    test('TC_LOGIN_010 - Invalid username shows error', async () => {
+    test('TC_LOGIN_10 - Invalid username shows error', async () => {
       await loginPage.login('fake_user', USERS.standard.password);
       expect(await loginPage.isErrorVisible()).toBeTruthy();
     });
@@ -79,12 +79,12 @@ test.describe(' Login Tests', () => {
       await expect(loginPage.usernameInput).toBeVisible();
     });
 
-    test('TC_LOGIN_012 - Password field masks input', async () => {
+    test('TC_LOGIN_12 - Password field masks input', async () => {
       const type = await loginPage.passwordInput.getAttribute('type');
       expect(type).toBe('password');
     });
 
-    test('TC_LOGIN_013 - User can type in username field', async () => {
+    test('TC_LOGIN_13 - User can type in username field', async () => {
       await loginPage.usernameInput.fill('test_user');
       await expect(loginPage.usernameInput).toHaveValue('test_user');
     });
