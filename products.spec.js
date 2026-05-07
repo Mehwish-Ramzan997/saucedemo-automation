@@ -1,10 +1,10 @@
-// tests/products.spec.js
+
 const { test, expect } = require('@playwright/test');
 const { LoginPage } = require('../pages/LoginPage');
 const { ProductsPage } = require('../pages/ProductsPage');
 const { USERS, PRODUCTS } = require('../utils/testData');
 
-test.describe('🛍️ Products Page Tests', () => {
+test.describe('Products Page Tests', () => {
 
   let loginPage;
   let productsPage;
@@ -17,7 +17,7 @@ test.describe('🛍️ Products Page Tests', () => {
     await expect(page).toHaveURL(/inventory/);
   });
 
-  test.describe('📋 Product Listing', () => {
+  test.describe('Product Listing', () => {
 
     test('TC_PROD_001 - Should display 6 products', async () => {
       const count = await productsPage.getProductCount();
@@ -52,7 +52,7 @@ test.describe('🛍️ Products Page Tests', () => {
 
   });
 
-  test.describe('🔢 Sorting', () => {
+  test.describe('Sorting', () => {
 
     test('TC_SORT_001 - Sort A-Z works correctly', async ({ page }) => {
       await productsPage.sortProducts('az');
@@ -86,7 +86,7 @@ test.describe('🛍️ Products Page Tests', () => {
 
   });
 
-  test.describe('🛒 Add to Cart', () => {
+  test.describe('Add to Cart', () => {
 
     test('TC_CART_001 - Cart badge appears after adding product', async () => {
       await productsPage.addProductToCart(PRODUCTS.backpack);
@@ -109,7 +109,7 @@ test.describe('🛍️ Products Page Tests', () => {
 
   });
 
-  test.describe('🚪 Logout', () => {
+  test.describe('Logout', () => {
 
     test('TC_LOGOUT_001 - User can logout successfully', async ({ page }) => {
       await productsPage.logout();
