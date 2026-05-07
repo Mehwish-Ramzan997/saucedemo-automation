@@ -1,0 +1,24 @@
+{
+  "name": "saucedemo-playwright-automation",
+  "version": "2.0.0",
+  "description": "Professional Playwright E2E Automation Framework for SauceDemo",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:ui": "npx playwright test --ui",
+    "test:report": "npx playwright show-report",
+    "test:login": "npx playwright test tests/login.spec.js",
+    "test:products": "npx playwright test tests/products.spec.js",
+    "test:cart": "npx playwright test tests/cart.spec.js",
+    "test:checkout": "npx playwright test tests/checkout.spec.js",
+    "test:chrome": "npx playwright test --project=chromium",
+    "test:firefox": "npx playwright test --project=firefox",
+    "test:mobile": "npx playwright test --project='Mobile Chrome'"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.42.0"
+  },
+  "keywords": ["playwright", "automation", "testing", "e2e", "saucedemo", "pom"],
+  "author": "Mehwish Ramzan",
+  "license": "MIT"
+}
