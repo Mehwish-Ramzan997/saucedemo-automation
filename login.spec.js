@@ -1,9 +1,9 @@
-// tests/login.spec.js
+
 const { test, expect } = require('@playwright/test');
 const { LoginPage } = require('../pages/LoginPage');
 const { USERS, MESSAGES } = require('../utils/testData');
 
-test.describe('🔐 Login Tests', () => {
+test.describe(' Login Tests', () => {
 
   let loginPage;
 
@@ -12,7 +12,7 @@ test.describe('🔐 Login Tests', () => {
     await loginPage.navigate();
   });
 
-  test.describe('✅ Positive Tests', () => {
+  test.describe(' Positive Tests', () => {
 
     test('TC_LOGIN_001 - Standard user login successfully', async ({ page }) => {
       await loginPage.login(USERS.standard.username, USERS.standard.password);
@@ -36,7 +36,7 @@ test.describe('🔐 Login Tests', () => {
 
   });
 
-  test.describe('❌ Negative Tests', () => {
+  test.describe(' Negative Tests', () => {
 
     test('TC_LOGIN_005 - Locked out user sees error', async () => {
       await loginPage.login(USERS.locked.username, USERS.locked.password);
@@ -73,7 +73,7 @@ test.describe('🔐 Login Tests', () => {
 
   });
 
-  test.describe('🎨 UI Tests', () => {
+  test.describe(' UI Tests', () => {
 
     test('TC_LOGIN_011 - Username field is visible', async () => {
       await expect(loginPage.usernameInput).toBeVisible();
