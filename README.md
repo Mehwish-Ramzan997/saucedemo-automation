@@ -1,25 +1,20 @@
-# 🎭 SauceDemo Playwright Automation Framework
+#  SauceDemo Playwright Automation Framework
 
-![Playwright](https://img.shields.io/badge/Playwright-1.42.0-45ba4b?style=for-the-badge&logo=playwright&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![Tests](https://img.shields.io/badge/Tests-44+-blue?style=for-the-badge)
-![POM](https://img.shields.io/badge/Pattern-Page%20Object%20Model-orange?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+
 
 ---
 
-## 📌 About This Project
+##  About This Project
 
 A **professional, production-grade E2E automation testing framework** built with **Playwright** and **JavaScript**, following the **Page Object Model (POM)** design pattern.
 
 This framework covers complete end-to-end testing of the [SauceDemo](https://www.saucedemo.com) e-commerce application — including login, product listing, sorting, cart management, and full checkout flow.
 
-> 🧪 44+ Test Cases &nbsp;|&nbsp; 🧩 Page Object Model &nbsp;|&nbsp; 🌐 Cross-Browser &nbsp;|&nbsp; 📱 Mobile Testing &nbsp;|&nbsp; 📊 HTML Reports
+> 44+ Test Cases &nbsp;|&nbsp;  Page Object Model &nbsp;|&nbsp;  Cross-Browser &nbsp;|&nbsp;  Mobile Testing &nbsp;|&nbsp;  HTML Reports
 
 ---
 
-## 🗂️ Project Structure
+##  Project Structure
 
 ```
 saucedemo-automation/
@@ -46,51 +41,51 @@ saucedemo-automation/
 
 ---
 
-## ✅ Test Coverage
+##  Test Coverage
 
 | Module | Test Cases | Coverage |
 |---|---|---|
-| 🔐 Login | 13 | Positive, Negative, UI Validation |
-| 🛍️ Products | 14 | Listing, Sorting, Add to Cart, Logout |
-| 🛒 Cart | 8 | Add, Remove, Navigation |
-| 💳 Checkout | 12 | Validation, Price Calc, E2E Flow |
+|  Login | 13 | Positive, Negative, UI Validation |
+|  Products | 14 | Listing, Sorting, Add to Cart, Logout |
+|  Cart | 8 | Add, Remove, Navigation |
+|  Checkout | 12 | Validation, Price Calc, E2E Flow |
 | **Total** | **47** | **Full Website Coverage** |
 
 ---
 
-## 🧪 What Is Tested
+##  What Is Tested
 
-### 🔐 Login
-- ✅ Valid user login
-- ❌ Locked out user error
-- ❌ Wrong credentials validation
-- ❌ Empty username / password
-- 🎨 UI elements (visibility, field types)
+###  Login
+-  Valid user login
+-  Locked out user error
+-  Wrong credentials validation
+-  Empty username / password
+-  UI elements (visibility, field types)
 
-### 🛍️ Products Page
-- ✅ 6 products displayed
-- ✅ Names, prices, images verification
-- ✅ Sort A-Z, Z-A, Price Low→High, High→Low
-- ✅ Add to cart + badge count update
-- ✅ Logout functionality
+###  Products Page
+-  6 products displayed
+-  Names, prices, images verification
+-  Sort A-Z, Z-A, Price Low→High, High→Low
+-  Add to cart + badge count update
+-  Logout functionality
 
-### 🛒 Cart
-- ✅ Empty cart on fresh login
-- ✅ Add single & multiple products
-- ✅ Remove item / remove all
-- ✅ Cart badge disappears when empty
-- ✅ Continue shopping navigation
+###  Cart
+-  Empty cart on fresh login
+-  Add single & multiple products
+-  Remove item / remove all
+-  Cart badge disappears when empty
+-  Continue shopping navigation
 
-### 💳 Checkout
-- ✅ Form validation (first name, last name, zip)
-- ✅ Correct price calculation (subtotal + tax = total)
-- ✅ Order success message
-- ✅ Cart cleared after order
-- ✅ Full E2E purchase flow
+###  Checkout
+-  Form validation (first name, last name, zip)
+-  Correct price calculation (subtotal + tax = total)
+-  Order success message
+-  Cart cleared after order
+-  Full E2E purchase flow
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 - [Node.js](https://nodejs.org) v18+
@@ -141,17 +136,17 @@ npm run test:report
 
 ---
 
-## 🌐 Cross-Browser Support
+##  Cross-Browser Support
 
 | Browser | Type |
 |---|---|
-| ✅ Chromium | Desktop |
-| ✅ Firefox | Desktop |
-| ✅ Mobile Chrome | Pixel 5 (Mobile) |
+|  Chromium | Desktop |
+|  Firefox | Desktop |
+|  Mobile Chrome | Pixel 5 (Mobile) |
 
 ---
 
-## 📊 Test Reports
+##  Test Reports
 
 HTML report auto-generated after every run:
 
@@ -160,14 +155,14 @@ npx playwright show-report
 ```
 
 **Includes:**
-- ✅ Pass/Fail per test
-- 📸 Screenshots on failure
-- 🎥 Video recordings on failure
-- 🔍 Trace viewer for debugging
+-  Pass/Fail per test
+-  Screenshots on failure
+-  Video recordings on failure
+-  Trace viewer for debugging
 
 ---
 
-## 🏗️ Design Patterns & Best Practices
+##  Design Patterns & Best Practices
 
 | Practice | Implementation |
 |---|---|
@@ -180,7 +175,7 @@ npx playwright show-report
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Tool | Version | Purpose |
 |---|---|---|
@@ -191,7 +186,7 @@ npx playwright show-report
 
 ---
 
-## 👩‍💻 Author
+##  Author
 
 **Mehwish Ramzan**
 
